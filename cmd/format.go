@@ -33,7 +33,7 @@ var Format = cli.Command{
 		cli.StringFlag{
 			Name:  "message, m",
 			Usage: "format `TYPE` messages",
-			Value: "sms",
+			Value: "message",
 		},
 		cli.StringFlag{
 			Name:  "output, o",
@@ -95,7 +95,7 @@ func CSV(bf *types.BackupFile, message string, out io.Writer) error {
 
 	fns := types.ConsumeFuncs{
 		StatementFunc: func(s *signal.SqlStatement) error {
-			if (*s.Statement)[:15] == "INSERT INTO "+message {
+			if strings.HasPrefix(*s.Statement, "INSERT INTO "+message) {
 				ss = append(ss, types.StatementToStringArray(s))
 			}
 			return nil
@@ -108,10 +108,23 @@ func CSV(bf *types.BackupFile, message string, out io.Writer) error {
 
 	w := csv.NewWriter(out)
 	var headers []string
-	if message == "mms" {
-		headers = types.MMSCSVHeaders
-	} else {
-		headers = types.SMSCSVHeaders
+	switch strings.ToLower(message) {
+	case "message":
+		headers = types.MessageCSVHeaders
+	case "recipient":
+		headers = types.RecipientCSVHeaders
+	case "thread":
+		headers = types.ThreadCSVHeaders
+	case "call":
+		headers = types.CallCSVHeaders
+	case "groups":
+		headers = types.GroupsCSVHeaders
+	case "group_membership":
+		headers = types.GroupMembershipCSVHeaders
+	case "group_receipts":
+		headers = types.GroupReceiptsCSVHeaders
+	default:
+		headers[0] = "Headers unknown"
 	}
 
 	if err := w.Write(headers); err != nil {
