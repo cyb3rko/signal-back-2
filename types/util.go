@@ -2,8 +2,6 @@ package types
 
 import (
 	"io"
-	"log"
-	"os"
 )
 
 // MultiWriter is a convenience wrapper around an io.Writer to allow multiple
@@ -11,11 +9,6 @@ import (
 type MultiWriter struct {
 	io.Writer
 	err error
-}
-
-// NewMultiWriter returns a new instance of a multi writer.
-func NewMultiWriter(w io.Writer) *MultiWriter {
-	return &MultiWriter{w, nil}
 }
 
 // W writes a slice of bytes to the underlying writer, or silently fails if
@@ -30,14 +23,4 @@ func (w *MultiWriter) W(p []byte) {
 // Error returns the final error message of the writer.
 func (w *MultiWriter) Error() error {
 	return w.err
-}
-
-func rescue(v ...interface{}) {
-	if r := recover(); r != nil {
-		log.Println("Panicked:", r)
-		if v != nil {
-			log.Println(v)
-			os.Exit(2)
-		}
-	}
 }
