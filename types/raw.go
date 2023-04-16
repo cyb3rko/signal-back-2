@@ -3,7 +3,7 @@ package types
 import (
 	"strconv"
 
-	"github.com/xeals/signal-back/signal"
+	"github.com/cyb3rko/signal-back-2/signal"
 )
 
 // StatementToStringArray formats a SqlStatement fairly literally as an array.

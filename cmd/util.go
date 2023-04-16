@@ -7,9 +7,9 @@ import (
 	"os"
 	"syscall"
 
+	"github.com/cyb3rko/signal-back-2/types"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"github.com/xeals/signal-back/types"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

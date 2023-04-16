@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/cyb3rko/signal-back-2/cmd"
+	"github.com/cyb3rko/signal-back-2/types"
 	"github.com/urfave/cli"
-	"github.com/xeals/signal-back/cmd"
-	"github.com/xeals/signal-back/types"
 )
 
 var version = "devel"

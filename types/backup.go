@@ -15,9 +15,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/cyb3rko/signal-back-2/signal"
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
-	"github.com/xeals/signal-back/signal"
 	"golang.org/x/crypto/hkdf"
 )
 

@@ -12,10 +12,10 @@ import (
 	"runtime/debug"
 	"strings"
 
+	"github.com/cyb3rko/signal-back-2/signal"
+	"github.com/cyb3rko/signal-back-2/types"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"github.com/xeals/signal-back/signal"
-	"github.com/xeals/signal-back/types"
 )
 
 // Format fulfils the `format` subcommand.

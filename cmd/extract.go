@@ -7,10 +7,10 @@ import (
 	"log"
 	"os"
 
+	"github.com/cyb3rko/signal-back-2/types"
 	"github.com/h2non/filetype"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"github.com/xeals/signal-back/types"
 )
 
 // Extract fulfils the `extract` subcommand.

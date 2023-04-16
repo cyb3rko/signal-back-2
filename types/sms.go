@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/cyb3rko/signal-back-2/signal"
 	"github.com/pkg/errors"
-	"github.com/xeals/signal-back/signal"
 )
 
 // Character sets as specified by IANA.
