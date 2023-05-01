@@ -1,6 +1,4 @@
-# signal-back
-
-[![Build status](https://travis-ci.org/xeals/signal-back.svg?branch=master)](https://travis-ci.org/xeals/signal-back)
+# signal-back-2
 
 In version 4.17.5, the Signal Android app introduced encrypted backups. While these are undoubtedly a security benefit over unencrypted backups, they do present an issue in being read into other systems or simply by their owner.
 
@@ -87,21 +85,13 @@ Everything will be in the `output` folder where you ran the command. Note that s
 Building requires [Go](https://golang.org) and [dep](https://github.com/golang/dep). If you don't have one (or both) of these tools, instructions should be easy to find. After you've initialised everything:
 
 ```
-$ git clone https://github.com/xeals/signal-back $GOPATH/src/github.com/xeals/signal-back
-$ cd $GOPATH/src/github.com/xeals/signal-back
+$ git clone https://github.com/cyb3rko/signal-back-2 $GOPATH/src/github.com/cyb3rko/signal-back-2
+$ cd $GOPATH/src/github.com/cyb3rko/signal-back-2
 $ dep ensure
 $ go build .
 ```
 
-You can also just use `go get github.com/xeals/signal-back`, but I provide no guarantees on dependency compatibility.
-
-# Todo list
-
-- [ ] Code cleanup
-  - [ ] make code legible for other people
-- [x] Actual command line-ness
-- [x] Formatting ideas and options
-- [ ] User-friendliness in errors and stuff
+You can also just use `go get github.com/cyb3rko/signal-back-2`, but I provide no guarantees on dependency compatibility.
 
 # License
 
